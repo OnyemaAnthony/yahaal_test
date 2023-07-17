@@ -17,5 +17,7 @@ import 'package:fluttertoast/fluttertoast.dart';
     );
 
   }
+ static Widget showLoader(){
+     return const Center(child: CircularProgressIndicator(),);
+  }
 }
-//update task
