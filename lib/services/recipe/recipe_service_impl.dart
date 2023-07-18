@@ -35,7 +35,6 @@ class RecipeServiceImpl extends BaseApi implements RecipeService{
   Future<Recipe> fetchFavouriteRecipe() async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
    String? encodedRecipes= sharedPreferences.getString('favourites');
-   logger.d(encodedRecipes);
    List recipes = jsonDecode(encodedRecipes!);
    List<Results> recipeList = recipes.map((e) => Results.fromJson(e)).toList();
    Recipe recipe = Recipe();
@@ -46,7 +45,6 @@ class RecipeServiceImpl extends BaseApi implements RecipeService{
   @override
   Future<void> saveFavouriteRecipe(Results recipe)async {
     List<Results> recipeStart = [recipe];
-    logger.d(recipeStart);
     String encodedRecipe = jsonEncode(recipeStart);
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? encodedRecipes= sharedPreferences.getString('favourites');

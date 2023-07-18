@@ -31,7 +31,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     final response = await GetRecipes.it.call();
     response.fold((error) {
       //handle error
-      emit(RecipeErrorState(error.message));
+      emit(RecipeErrorState(error.error));
     }, (recipe) {
       emit(RecipeLoadedState(recipe));
     });
@@ -43,7 +43,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     final response = await FindRecipeByNameCase.it.call(event.recipeName);
     response.fold((error) {
       //handle error
-      emit(RecipeErrorState(error.message));
+      emit(RecipeErrorState(error.error));
     }, (recipe) {
        emit(RecipeSearchedState(recipe));
     });
@@ -55,7 +55,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     final response = await FindRecipeByIdCase.it.call(event.id);
     response.fold((error) {
       //handle error
-      emit(RecipeErrorState(error.message));
+      emit(RecipeErrorState(error.error));
     }, (recipeInfo) {
       emit(RecipeInfoLoadedState(recipeInfo));
     });
@@ -66,7 +66,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     final response = await SaveFavouriteRecipeCase.it.call(event.recipe);
     response.fold((error) {
       //handle error
-      emit(RecipeErrorState(error.message));
+      emit(RecipeErrorState(error.error));
     }, (recipeInfo) {
       emit(RecipeSavedState());
     });
@@ -74,12 +74,11 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
   }
 
   FutureOr<void> _mapFetchFavouriteRecipeEventToState(FetchFavouriteRecipeEvent event, Emitter<RecipeState> emit)async {
-    logger.d('messagerr');
     emit(RecipeLoadingState());
     final response = await GetFavouriteRecipeCase.it.call();
     response.fold((error) {
       //handle error
-      emit(RecipeErrorState(error.message));
+      emit(RecipeErrorState(error.error));
     }, (recipe) {
       emit(RecipeLoadedState(recipe));
     });

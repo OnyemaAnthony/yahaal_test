@@ -165,17 +165,11 @@ class _AppBarWidgetState extends State<AppBarWidget> {
           ),
         ),
       ),
-      actions: [
-        IconButton(
-          onPressed: () async {
-          },
-          icon: const Icon(CupertinoIcons.share, color: Colors.black),
-        )
-      ],
+
       title: Opacity(
         opacity: (0 + widget.shrinkOffset / widget.expandedHeight),
         child: Text(
-          "Spoonacular",
+          "Yahaal",
           style: Theme.of(context).textTheme.headline1,
         ),
       ),

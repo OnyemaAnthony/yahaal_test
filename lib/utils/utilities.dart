@@ -20,4 +20,8 @@ import 'package:fluttertoast/fluttertoast.dart';
  static Widget showLoader(){
      return const Center(child: CircularProgressIndicator(),);
   }
+
+  static Widget showError(String message){
+     return Center(child: Text(message),);
+  }
 }

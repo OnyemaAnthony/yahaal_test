@@ -32,6 +32,7 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
                   Results recipe = state.recipes.results![index];
 
                   return PopularCard(
+                    isFavourite: true,
                     name: recipe.title,
                     star: "4.5",
                     weight: '10',

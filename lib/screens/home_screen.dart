@@ -63,13 +63,15 @@ class _HomeScreenState extends State<HomeScreen> {
       return Utilities.showLoader();
     }else if(state is RecipeLoadedState){
         recipeState = state.recipes;
-        return _buildRecipe(state.recipes);
+        return state.recipes.results!.isEmpty? Utilities.showError('There is no data available'): _buildRecipe(state.recipes);
 
 
     }else if(recipeState.number != null){
       return _buildRecipe(recipeState);
 
 
+    }else if(state is RecipeErrorState){
+      return Utilities.showError(state.errorMessage);
     }
     return Container();
   },

@@ -27,13 +27,13 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.home),
         title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: CupertinoColors.activeOrange,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.favorite),
         title: ("Favourite"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: CupertinoColors.activeOrange,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
     ];
@@ -53,7 +53,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       backgroundColor: Colors.white,
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
-      stateManagement: true, // Default is true.
+      stateManagement: false,
       hideNavigationBarWhenKeyboardShows: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),

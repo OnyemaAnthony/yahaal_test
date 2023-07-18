@@ -7,7 +7,7 @@ import '../utils/app_colors.dart';
 class PopularCard extends StatelessWidget {
   String? imagePath,name,weight,star;
   bool? isFavourite;
-   PopularCard({Key? key,this.imagePath,this.name,this.star,this.weight,this.isFavourite}) : super(key: key);
+   PopularCard({Key? key,this.imagePath,this.name,this.star,this.weight,this.isFavourite=false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -95,36 +95,29 @@ class PopularCard extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(color: Colors.grey[400]!, blurRadius: 20)
                     ]),
-                child: Hero(
-                  tag: imagePath!,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: CachedNetworkImage(
+                    imageUrl: imagePath!,
+                    imageBuilder: (context, imageProvider) => Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
 
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: CachedNetworkImage(
-                      imageUrl: imagePath!,
-                      imageBuilder: (context, imageProvider) => Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-
-                              image: imageProvider,
-                              fit: BoxFit.cover,
-                              //colorFilter:
-                             // const ColorFilter.mode(Colors.red, BlendMode.colorBurn)
-                          ),
+                          image: imageProvider,
+                          fit: BoxFit.cover,
+                          //colorFilter:
+                          // const ColorFilter.mode(Colors.red, BlendMode.colorBurn)
                         ),
                       ),
-                      placeholder: (context, url) => const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => const Icon(Icons.error),
                     ),
+                    placeholder: (context, url) => const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
                 ),
               ),
             ],
           ));
-
-
-
   }
 }
