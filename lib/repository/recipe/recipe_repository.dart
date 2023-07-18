@@ -10,5 +10,4 @@ abstract class RecipeRepository{
   Future<Either<ApiRequestFailure, RecipeInfo>>findRecipeById(String id);
   Future<Either<ApiRequestFailure, void>>saveFavouriteRecipe(Results recipe);
   Future<Either<ApiRequestFailure, Recipe>>fetchFavouriteRecipe();
-
 }

@@ -107,8 +107,6 @@ class PopularCard extends StatelessWidget {
 
                           image: imageProvider,
                           fit: BoxFit.cover,
-                          //colorFilter:
-                          // const ColorFilter.mode(Colors.red, BlendMode.colorBurn)
                         ),
                       ),
                     ),

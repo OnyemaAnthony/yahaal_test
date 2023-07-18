@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:yahaal_test/widgets/trey.dart';
+import 'package:yahaal_test/widgets/delayed.dart';
 
 import '../blocs/recipe/recipe_bloc.dart';
 import '../models/recipe.dart';
@@ -20,8 +20,6 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     final appBarSize = maxExtent - shrinkOffset;
-    final proportion = 2 - (maxExtent / appBarSize);
-    final percent = proportion < 0 || proportion > 1 ? 0.0 : proportion;
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: maxExtent),
       child: Stack(

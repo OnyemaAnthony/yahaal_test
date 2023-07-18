@@ -4,7 +4,7 @@ import 'package:yahaal_test/models/recipe.dart';
 import 'package:yahaal_test/models/recipe_info.dart';
 import 'package:yahaal_test/utils/utilities.dart';
 import '../widgets/app_bar.dart';
-import '../widgets/trey.dart';
+import '../widgets/delayed.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 class RecipeDetail extends StatelessWidget {
