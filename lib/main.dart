@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Di.initialize();
   runApp(BlocProvider(
-    create: (context) => RecipeBloc()..add(FetchRecipesEvent()),
+    create: (context) => RecipeBloc(),
     child: MyApp(),
   ));
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
 
-      home: BottomNavigationBarScreen(),
+      home: const BottomNavigationBarScreen(),
     );
   }
 }

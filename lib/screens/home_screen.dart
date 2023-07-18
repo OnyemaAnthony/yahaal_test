@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:logger/logger.dart';
@@ -19,16 +18,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late RecipeBloc recipeBloc;
+  late RecipeBloc recipeBloc = BlocProvider.of<RecipeBloc>(context);
   int selectedFoodCard = 0;
   final logger = Logger();
   Recipe recipeState = Recipe();
+  @override
+  void initState() {
+    super.initState();
+    recipeBloc.add(FetchRecipesEvent());
+  }
 
   @override
   Widget build(BuildContext context) {
+    recipeBloc.add(FetchRecipesEvent());
+
     return Builder(
       builder: (BuildContext context) {
-        recipeBloc = BlocProvider.of<RecipeBloc>(context);
+       // recipeBloc = BlocProvider.of<RecipeBloc>(context)..add(FetchRecipesEvent());
         return Scaffold(
           backgroundColor: AppColors.white,
           appBar: AppBar(
@@ -63,10 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
       return Utilities.showLoader();
     }else if(state is RecipeLoadedState){
         recipeState = state.recipes;
-        return state.recipes.results!.isEmpty? Utilities.showError('There is no data available'): _buildRecipe(state.recipes);
+        return  _buildRecipe(state.recipes);
 
 
-    }else if(recipeState.number != null){
+    }else if(recipeState.results != null){
       return _buildRecipe(recipeState);
 
 

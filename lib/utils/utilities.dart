@@ -5,6 +5,14 @@ import 'package:fluttertoast/fluttertoast.dart';
     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>screen));
   }
 
+   static void pushReplacement(BuildContext context,Widget screen){
+     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>screen));
+   }
+
+
+   static void pop(BuildContext context){
+     Navigator.of(context).pop();
+   }
   static showToast(String msg){
     Fluttertoast.showToast(
         msg:msg,

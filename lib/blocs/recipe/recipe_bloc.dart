@@ -68,7 +68,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
       //handle error
       emit(RecipeErrorState(error.error));
     }, (recipeInfo) {
-      emit(RecipeSavedState());
+      emit(RecipeSavedState(event.recipes));
     });
 
   }

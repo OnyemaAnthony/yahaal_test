@@ -2,19 +2,25 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:yahaal_test/utils/utilities.dart';
 import 'package:yahaal_test/widgets/delayed.dart';
 
 import '../blocs/recipe/recipe_bloc.dart';
 import '../models/recipe.dart';
+import '../models/recipe_info.dart';
 
 class MySliverAppBar extends SliverPersistentHeaderDelegate {
   final double expandedHeight;
   final Results info;
   final RecipeBloc? recipeBloc;
+  final RecipeInfo? recipes;
+
   MySliverAppBar({
+    this.recipes,
     required this.expandedHeight,
     required this.info,
     this.recipeBloc
+
   });
   @override
   Widget build(
@@ -93,7 +99,8 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
                       ),
                       GestureDetector(
                           onTap: (){
-                            recipeBloc!.add(SaveFavouriteRecipeEvent(info));
+                            recipeBloc!.add(SaveFavouriteRecipeEvent(info,recipes!));
+                            Utilities.pop(context);
 
                           },
                           child: const Icon(Icons.favorite,color: Colors.red,size: 40,))

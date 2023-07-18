@@ -14,7 +14,6 @@ class RecipeDetail extends StatelessWidget {
    RecipeDetail(this.recipe, {super.key});
   @override
   Widget build(BuildContext context) {
-    print(recipe.id);
     return  Scaffold(
       body: Builder(
         builder: (BuildContext context) {
@@ -28,6 +27,8 @@ class RecipeDetail extends StatelessWidget {
       return Utilities.showLoader();
     }else if(state is RecipeErrorState) {
       return Utilities.showError(state.errorMessage);
+    }else if(state is RecipeSavedState){
+      return _buildRecipesDetails(context, state.recipes);
     }
     return Container();
   },
@@ -43,7 +44,7 @@ Widget _buildRecipesDetails(BuildContext context,RecipeInfo recipeInf){
     child: CustomScrollView(
       slivers: [
         SliverPersistentHeader(
-          delegate: MySliverAppBar(expandedHeight: 300, info:recipe,recipeBloc: recipeBloc),
+          delegate: MySliverAppBar(expandedHeight: 300, info:recipe,recipeBloc: recipeBloc,recipes: recipeInf),
           pinned: true,
         ),
         SliverToBoxAdapter(

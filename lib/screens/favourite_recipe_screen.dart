@@ -26,7 +26,7 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
         return BlocBuilder<RecipeBloc, RecipeState>(
           builder: (context, state) {
             if(state is RecipeLoadedState){
-              return ListView.builder(
+              return  ListView.builder(
                 itemCount: state.recipes.results!.length,
                 itemBuilder: (context, index) {
                   Results recipe = state.recipes.results![index];
@@ -40,7 +40,7 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
                     imagePath: recipe.image,
                   );
                 },
-              );
+              );//Center(child: Text("You do not have any favourite recipes yet"),);
 
             }else if(state is RecipeErrorState){
               return Center(child: Text(state.errorMessage),);

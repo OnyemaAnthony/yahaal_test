@@ -35,11 +35,16 @@ class RecipeServiceImpl extends BaseApi implements RecipeService{
   Future<Recipe> fetchFavouriteRecipe() async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
    String? encodedRecipes= sharedPreferences.getString('favourites');
-   List recipes = jsonDecode(encodedRecipes!);
-   List<Results> recipeList = recipes.map((e) => Results.fromJson(e)).toList();
-   Recipe recipe = Recipe();
-   recipe.results = recipeList;
-   return recipe;
+  // if(encodedRecipes != null && encodedRecipes.isNotEmpty){
+
+     List recipes = jsonDecode(encodedRecipes!);
+     List<Results> recipeList = recipes.map((e) => Results.fromJson(e)).toList();
+     Recipe recipe = Recipe();
+     recipe.results = recipeList;
+     return recipe;
+  // }else{
+     return Recipe();
+  // }
   }
 
   @override

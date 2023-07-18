@@ -24,8 +24,10 @@ class FindRecipeByIdEvent extends RecipeEvent{
 
 class SaveFavouriteRecipeEvent extends RecipeEvent{
   final Results recipe;
+  final RecipeInfo recipes;
 
-  const SaveFavouriteRecipeEvent(this.recipe);
+
+  const SaveFavouriteRecipeEvent(this.recipe,this.recipes);
 }
 
 class FetchFavouriteRecipeEvent extends RecipeEvent{

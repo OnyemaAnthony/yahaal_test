@@ -27,6 +27,10 @@ class RecipeErrorState extends RecipeState{
 }
 
 class RecipeSavedState extends RecipeState{
+  final RecipeInfo recipes;
+
+ const RecipeSavedState(this.recipes);
+
 
 }
 class RecipeSearchedState extends RecipeState{
