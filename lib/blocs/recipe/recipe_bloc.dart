@@ -80,7 +80,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
       //handle error
       emit(RecipeErrorState(error.error));
     }, (recipe) {
-      emit(RecipeLoadedState(recipe));
+      emit(FavouriteLoadedState(recipe));
     });
   }
 }

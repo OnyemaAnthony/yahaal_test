@@ -20,6 +20,12 @@ class RecipeLoadedState extends RecipeState{
   const RecipeLoadedState(this.recipes);
 }
 
+class FavouriteLoadedState extends RecipeState{
+  final Recipe recipes;
+
+  const FavouriteLoadedState(this.recipes);
+}
+
 class RecipeErrorState extends RecipeState{
   final String errorMessage;
 

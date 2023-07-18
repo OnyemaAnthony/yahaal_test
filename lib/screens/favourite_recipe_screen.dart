@@ -16,41 +16,47 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
 
   @override
   Widget build(BuildContext context) {
-  return  Scaffold(
-    appBar: AppBar(
-      title: const Text("Your Favourite recipes"),
-    ),
-    body: Builder(
-      builder: (BuildContext context) {
-        recipeBloc = BlocProvider.of<RecipeBloc>(context)..add(FetchFavouriteRecipeEvent());
-        return BlocBuilder<RecipeBloc, RecipeState>(
-          builder: (context, state) {
-            if(state is RecipeLoadedState){
-              return  ListView.builder(
-                itemCount: state.recipes.results!.length,
-                itemBuilder: (context, index) {
-                  Results recipe = state.recipes.results![index];
+    return BlocProvider(
+      create: (BuildContext context) => RecipeBloc(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Your Favourite recipes"),
+        ),
+        body: Builder(
+            builder: (BuildContext context) {
+              recipeBloc = BlocProvider.of<RecipeBloc>(context);
+              recipeBloc.add(FetchFavouriteRecipeEvent());
+              return BlocBuilder<RecipeBloc, RecipeState>(
+                builder: (context, state) {
+                  print('state $state');
+                  if (state is FavouriteLoadedState) {
+                    //print('state isjjjj ${state.recipes.results}');
+                    return state.recipes.results == null
+                        ? const Center(
+                      child: Text("You do not have any favourite recipes yet"),)
+                        : ListView.builder(
+                      itemCount: state.recipes.results!.length,
+                      itemBuilder: (context, index) {
+                        Results recipe = state.recipes.results![index];
+                        return PopularCard(
+                          isFavourite: true,
+                          name: recipe.title,
+                          star: "4.5",
+                          weight: '10',
 
-                  return PopularCard(
-                    isFavourite: true,
-                    name: recipe.title,
-                    star: "4.5",
-                    weight: '10',
-
-                    imagePath: recipe.image,
-                  );
+                          imagePath: recipe.image,
+                        );
+                      },
+                    );
+                  } else if (state is RecipeErrorState) {
+                    return Center(child: Text(state.errorMessage),);
+                  }
+                  return Container();
                 },
-              );//Center(child: Text("You do not have any favourite recipes yet"),);
-
-            }else if(state is RecipeErrorState){
-              return Center(child: Text(state.errorMessage),);
+              );
             }
-            return Container();
-          },
-        );
-      }
-    ),
-  );
-
+        ),
+      ),
+    );
   }
 }

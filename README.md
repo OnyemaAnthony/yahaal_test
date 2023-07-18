@@ -14,7 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-# Flutter-Bloc-Recipe-app
 
 ## App Features.
 
@@ -23,19 +22,13 @@ samples, guidance on mobile development, and a full API reference.
 - view recipes information
 
 
-## Changelog
-
-- New UI design added.
-- Added Animation.
-- app integrated with deep links.
-- removed useless login/signUp.
-- Added local database.
-
-**note:- This is latest version(v1.0.1) of app. you can go to lower version(1.0.0) by changing branch to main**.
-
 ## App Information
-
 Here,i created this app with the completion of the technical challange for **Yahaal** flutter developer job, in this app you can view a list of recipes, search, recipes by name and mark recipe as favourite
+
+## UI challanges and choice of Design
+Well the only challange i faced was trying to choose a good design that will be very easy as well, i had a lot of options to choose from which was not really easy to decide on at first.
+
+
 
 ## Tools use
 in this application i used Flutter bloc for state managemen, and dio for http request and i also imployed clean architecture to make the code easy to understand and easy to scale, i also followed SOLID principle
@@ -49,7 +42,7 @@ in this application i used Flutter bloc for state managemen, and dio for http re
 <img src="screenshots/home.png" width="30%">
 <img src="screenshots/detail.png" width="30%">
 <img src="screenshots/favourite.png" width="30%">
-<img src="screenshots/search" width="30%">
+<img src="screenshots/search.png" width="30%">
 
 </p>
 

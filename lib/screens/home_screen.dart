@@ -18,23 +18,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late RecipeBloc recipeBloc = BlocProvider.of<RecipeBloc>(context);
+  late RecipeBloc recipeBloc ;
   int selectedFoodCard = 0;
   final logger = Logger();
   Recipe recipeState = Recipe();
   @override
-  void initState() {
-    super.initState();
-    recipeBloc.add(FetchRecipesEvent());
-  }
+  // void initState() {
+  //   super.initState();
+  //   recipeBloc.add(FetchRecipesEvent());
+  // }
 
   @override
   Widget build(BuildContext context) {
-    recipeBloc.add(FetchRecipesEvent());
+    //recipeBloc.add(FetchRecipesEvent());
 
     return Builder(
       builder: (BuildContext context) {
-       // recipeBloc = BlocProvider.of<RecipeBloc>(context)..add(FetchRecipesEvent());
+        recipeBloc = BlocProvider.of<RecipeBloc>(context)..add(FetchRecipesEvent());
         return Scaffold(
           backgroundColor: AppColors.white,
           appBar: AppBar(
@@ -249,4 +249,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+  // @override
+  // void dispose() {
+  //   recipeBloc.close();
+  //   super.dispose();
+  // }
 }
