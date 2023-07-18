@@ -34,9 +34,6 @@ Well the only challange i faced was trying to choose a good design that will be 
 in this application i used Flutter bloc for state managemen, and dio for http request and i also imployed clean architecture to make the code easy to understand and easy to scale, i also followed SOLID principle
 
 
-**Packages used:**
-
-
 
 <p align="center">
 <img src="screenshots/home.png" width="30%">
@@ -60,5 +57,8 @@ $ flutter packages get
 
 # Run the app
 $ flutter run
+
+# Run the app
+$ Run tests to ensure features are working fine
 ```
 
