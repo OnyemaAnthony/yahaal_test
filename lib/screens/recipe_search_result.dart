@@ -18,21 +18,19 @@ class _RecipeSearchResultState extends State<RecipeSearchResult> {
       appBar: AppBar(
         title: const Text("Your recipe search results"),
       ),
-      body: Container(
-        child: ListView.builder(
-          itemCount: widget.recipe!.results!.length,
-          itemBuilder: (context,index){
-            Results recipe = widget.recipe!.results![index];
+      body: widget.recipe!.results!.isEmpty?const Center(child:Text("There is no result for you query...") ,): ListView.builder(
+        itemCount: widget.recipe!.results!.length,
+        itemBuilder: (context,index){
+          Results recipe = widget.recipe!.results![index];
 
-            return PopularCard(
-              name: recipe.title,
-              star: "4.5",
-              weight: '10',
+          return PopularCard(
+            name: recipe.title,
+            star: "4.5",
+            weight: '10',
 
-              imagePath: recipe.image,
-            );
-          },
-        ),
+            imagePath: recipe.image,
+          );
+        },
       ),
     );
   }

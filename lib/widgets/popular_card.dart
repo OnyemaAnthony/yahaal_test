@@ -6,11 +6,11 @@ import '../utils/app_colors.dart';
 
 class PopularCard extends StatelessWidget {
   String? imagePath,name,weight,star;
-   PopularCard({Key? key,this.imagePath,this.name,this.star,this.weight}) : super(key: key);
+  bool? isFavourite;
+   PopularCard({Key? key,this.imagePath,this.name,this.star,this.weight,this.isFavourite}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
         return Container(
           margin: const EdgeInsets.only(right: 25, left: 20, top: 25),
           decoration: BoxDecoration(
@@ -110,8 +110,9 @@ class PopularCard extends StatelessWidget {
 
                               image: imageProvider,
                               fit: BoxFit.cover,
-                              colorFilter:
-                              const ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
+                              //colorFilter:
+                             // const ColorFilter.mode(Colors.red, BlendMode.colorBurn)
+                          ),
                         ),
                       ),
                       placeholder: (context, url) => const CircularProgressIndicator(),

@@ -15,3 +15,19 @@ class FindRecipeByNameEvent extends RecipeEvent{
 
  const FindRecipeByNameEvent(this.recipeName);
 }
+
+class FindRecipeByIdEvent extends RecipeEvent{
+  final String id;
+
+  const FindRecipeByIdEvent(this.id);
+}
+
+class SaveFavouriteRecipeEvent extends RecipeEvent{
+  final Results recipe;
+
+  const SaveFavouriteRecipeEvent(this.recipe);
+}
+
+class FetchFavouriteRecipeEvent extends RecipeEvent{
+
+}

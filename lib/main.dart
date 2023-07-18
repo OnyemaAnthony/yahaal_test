@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yahaal_test/blocs/recipe/recipe_bloc.dart';
 import 'package:yahaal_test/di/injection.dart';
+import 'package:yahaal_test/screens/bottom_navigation_bar_screen.dart';
 import 'package:yahaal_test/screens/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
 
-      home: HomeScreen(),
+      home: BottomNavigationBarScreen(),
     );
   }
 }

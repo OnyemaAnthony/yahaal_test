@@ -26,10 +26,22 @@ class RecipeErrorState extends RecipeState{
   const RecipeErrorState(this.errorMessage);
 }
 
+class RecipeSavedState extends RecipeState{
 
+}
 class RecipeSearchedState extends RecipeState{
   final Recipe recipes;
 
   const RecipeSearchedState(this.recipes);
 }
+
+class RecipeInfoLoadedState extends RecipeState{
+  final RecipeInfo recipes;
+
+  const RecipeInfoLoadedState(this.recipes);
+}
+
+
+
+
 
