@@ -21,6 +21,9 @@ samples, guidance on mobile development, and a full API reference.
 - mark recipes as favourite
 - view recipes information
 
+## Error handling.
+ i handled error using the [dartz](https://pub.dev/packages/dartz) library, which is a functional programing library that helps you to handle error types
+
 
 ## App Information
 Here,i created this app with the completion of the technical challange for **Yahaal** flutter developer job, in this app you can view a list of recipes, search, recipes by name and mark recipe as favourite
