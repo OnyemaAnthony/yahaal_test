@@ -28,9 +28,7 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
               recipeBloc.add(FetchFavouriteRecipeEvent());
               return BlocBuilder<RecipeBloc, RecipeState>(
                 builder: (context, state) {
-                  print('state $state');
                   if (state is FavouriteLoadedState) {
-                    //print('state isjjjj ${state.recipes.results}');
                     return state.recipes.results == null
                         ? const Center(
                       child: Text("You do not have any favourite recipes yet"),)

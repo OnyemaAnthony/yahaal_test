@@ -22,16 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedFoodCard = 0;
   final logger = Logger();
   Recipe recipeState = Recipe();
-  @override
-  // void initState() {
-  //   super.initState();
-  //   recipeBloc.add(FetchRecipesEvent());
-  // }
 
   @override
   Widget build(BuildContext context) {
-    //recipeBloc.add(FetchRecipesEvent());
-
     return Builder(
       builder: (BuildContext context) {
         recipeBloc = BlocProvider.of<RecipeBloc>(context)..add(FetchRecipesEvent());

@@ -61,7 +61,6 @@ class RecipeServiceImpl extends BaseApi implements RecipeService{
       String encoded = jsonEncode(recipeStart);
       sharedPreferences.setString('favourites', encoded);
       Utilities.showToast('Recipe marked as favourite');
-
     }else{
       sharedPreferences.setString('favourites', encodedRecipe);
       Utilities.showToast('Recipe marked as favourite');

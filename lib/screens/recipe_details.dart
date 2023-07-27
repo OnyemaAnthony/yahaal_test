@@ -169,7 +169,7 @@ Widget _buildRecipesDetails(BuildContext context,RecipeInfo recipeInf){
                       const SizedBox(height: 10,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: recipeInf.nutrition!.ingredients!.map((e) => Text(e.name!,style: TextStyle(fontSize: 20),)).toList(),
+                        children: recipeInf.nutrition!.ingredients!.map((e) => Text(e.name!,style: const TextStyle(fontSize: 20),)).toList(),
                       )
                     ],
                   ),

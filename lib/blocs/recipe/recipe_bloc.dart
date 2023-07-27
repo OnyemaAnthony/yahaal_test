@@ -77,7 +77,6 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(RecipeLoadingState());
     final response = await GetFavouriteRecipeCase.it.call();
     response.fold((error) {
-      //handle error
       emit(RecipeErrorState(error.error));
     }, (recipe) {
       emit(FavouriteLoadedState(recipe));
