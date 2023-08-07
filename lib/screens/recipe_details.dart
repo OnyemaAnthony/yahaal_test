@@ -154,7 +154,7 @@ Widget _buildRecipesDetails(BuildContext context,RecipeInfo recipeInf){
                   ),
                 ),
                  Padding(
-                  padding: EdgeInsets.all(26.0),
+                  padding:const EdgeInsets.all(26.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -30,7 +30,6 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(RecipeLoadingState());
     final response = await GetRecipes.it.call();
     response.fold((error) {
-      //handle error
       emit(RecipeErrorState(error.error));
     }, (recipe) {
       emit(RecipeLoadedState(recipe));
@@ -42,7 +41,6 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(RecipeLoadingState());
     final response = await FindRecipeByNameCase.it.call(event.recipeName);
     response.fold((error) {
-      //handle error
       emit(RecipeErrorState(error.error));
     }, (recipe) {
        emit(RecipeSearchedState(recipe));
@@ -54,7 +52,6 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(RecipeLoadingState());
     final response = await FindRecipeByIdCase.it.call(event.id);
     response.fold((error) {
-      //handle error
       emit(RecipeErrorState(error.error));
     }, (recipeInfo) {
       emit(RecipeInfoLoadedState(recipeInfo));
@@ -65,7 +62,6 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(RecipeLoadingState());
     final response = await SaveFavouriteRecipeCase.it.call(event.recipe);
     response.fold((error) {
-      //handle error
       emit(RecipeErrorState(error.error));
     }, (recipeInfo) {
       emit(RecipeSavedState(event.recipes));
