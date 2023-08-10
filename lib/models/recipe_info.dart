@@ -140,8 +140,8 @@ class Measures {
   Measures({this.us, this.metric});
 
   Measures.fromJson(Map<String, dynamic> json) {
-    us = json['us'] != null ? new Us.fromJson(json['us']) : null;
-    metric = json['metric'] != null ? new Us.fromJson(json['metric']) : null;
+    us = json['us'] != null ? Us.fromJson(json['us']) : null;
+    metric = json['metric'] != null ?  Us.fromJson(json['metric']) : null;
   }
 
 
@@ -179,27 +179,27 @@ class Nutrition {
     if (json['nutrients'] != null) {
       nutrients = <Nutrients>[];
       json['nutrients'].forEach((v) {
-        nutrients!.add(new Nutrients.fromJson(v));
+        nutrients!.add(Nutrients.fromJson(v));
       });
     }
     if (json['properties'] != null) {
       properties = <Properties>[];
       json['properties'].forEach((v) {
-        properties!.add(new Properties.fromJson(v));
+        properties!.add(Properties.fromJson(v));
       });
     }
 
     if (json['ingredients'] != null) {
       ingredients = <Ingredients>[];
       json['ingredients'].forEach((v) {
-        ingredients!.add(new Ingredients.fromJson(v));
+        ingredients!.add(Ingredients.fromJson(v));
       });
     }
     caloricBreakdown = json['caloricBreakdown'] != null
-        ? new CaloricBreakdown.fromJson(json['caloricBreakdown'])
+        ? CaloricBreakdown.fromJson(json['caloricBreakdown'])
         : null;
     weightPerServing = json['weightPerServing'] != null
-        ? new WeightPerServing.fromJson(json['weightPerServing'])
+        ? WeightPerServing.fromJson(json['weightPerServing'])
         : null;
   }
 
@@ -253,7 +253,7 @@ class Ingredients {
     if (json['nutrients'] != null) {
       nutrients = <Nutrients>[];
       json['nutrients'].forEach((v) {
-        nutrients!.add(new Nutrients.fromJson(v));
+        nutrients!.add( Nutrients.fromJson(v));
       });
     }
   }
