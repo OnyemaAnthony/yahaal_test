@@ -24,7 +24,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            statusBarBrightness: Brightness.dark
+          )
+        ),
+
         primarySwatch: Colors.yellow,
+
       ),
 
       home: const BottomNavigationBarScreen(),
