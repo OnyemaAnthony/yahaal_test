@@ -19,13 +19,13 @@ class Recipe {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.results != null) {
-      data['results'] = this.results!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (results != null) {
+      data['results'] = results!.map((v) => v.toJson()).toList();
     }
-    data['offset'] = this.offset;
-    data['number'] = this.number;
-    data['totalResults'] = this.totalResults;
+    data['offset'] = offset;
+    data['number'] = number;
+    data['totalResults'] = totalResults;
     return data;
   }
 }
@@ -46,11 +46,11 @@ class Results extends Recipe{
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['image'] = this.image;
-    data['imageType'] = this.imageType;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['image'] = image;
+    data['imageType'] = imageType;
     return data;
   }
 }

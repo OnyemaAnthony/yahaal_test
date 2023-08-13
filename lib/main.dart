@@ -12,10 +12,6 @@ void main() async {
     create: (context) => RecipeBloc(),
     child: MyApp(),
   ));
-
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark));
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +28,6 @@ class MyApp extends StatelessWidget {
         ),
 
         primarySwatch: Colors.yellow,
-
       ),
 
       home: const BottomNavigationBarScreen(),
