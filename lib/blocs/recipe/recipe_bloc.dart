@@ -16,7 +16,6 @@ part 'recipe_event.dart';
 part 'recipe_state.dart';
 
 class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
-  final logger = Logger();
 
   RecipeBloc() : super(RecipeInitial()) {
     on<FetchRecipesEvent>(_mapFetchRecipesEventToState);

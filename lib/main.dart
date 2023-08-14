@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yahaal_test/blocs/recipe/recipe_bloc.dart';
@@ -12,6 +13,7 @@ void main() async {
     create: (context) => RecipeBloc(),
     child: MyApp(),
   ));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
-            statusBarBrightness: Brightness.dark
+            statusBarBrightness: Brightness.dark,
+
           )
         ),
 
