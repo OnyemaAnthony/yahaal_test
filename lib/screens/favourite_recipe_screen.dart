@@ -5,7 +5,6 @@ import '../models/recipe.dart';
 import '../widgets/popular_card.dart';
 
 class FavouriteRecipeScreen extends StatefulWidget {
-  FavouriteRecipeScreen({Key? key}) : super(key: key);
 
   @override
   State<FavouriteRecipeScreen> createState() => _FavouriteRecipeScreenState();
