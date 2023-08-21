@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late RecipeBloc recipeBloc ;
   int selectedFoodCard = 0;
-  final logger = Logger();
   Recipe recipeState = Recipe();
 
   @override
@@ -202,11 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () => {
         setState(
-              () => {
-            logger.d(index),
-            selectedFoodCard = index,
-          },
-        ),
+              () => selectedFoodCard = index,),
       },
       child: Container(
         margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
