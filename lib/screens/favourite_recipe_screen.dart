@@ -19,7 +19,7 @@ class _FavouriteRecipeScreenState extends State<FavouriteRecipeScreen> {
       create: (BuildContext context) => RecipeBloc(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Your Favourite recipes"),
+          title: const Text("Your Favourite"),
         ),
         body: Builder(
             builder: (BuildContext context) {
