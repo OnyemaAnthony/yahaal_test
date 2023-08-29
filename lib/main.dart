@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
             statusBarBrightness: Brightness.dark,
-
           )
         ),
 

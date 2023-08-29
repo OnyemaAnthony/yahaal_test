@@ -16,7 +16,7 @@ class RecipeInfo {
   WinePairing? winePairing;
   String? instructions;
   List<Null>? analyzedInstructions;
-  Null? originalId;
+  Null originalId;
   String? spoonacularSourceUrl;
 
   RecipeInfo(
@@ -45,7 +45,7 @@ class RecipeInfo {
     if (json['extendedIngredients'] != null) {
       extendedIngredients = <ExtendedIngredients>[];
       json['extendedIngredients'].forEach((v) {
-        extendedIngredients!.add(new ExtendedIngredients.fromJson(v));
+        extendedIngredients!.add( ExtendedIngredients.fromJson(v));
       });
     }
     id = json['id'];
@@ -56,7 +56,7 @@ class RecipeInfo {
     image = json['image'];
     imageType = json['imageType'];
     nutrition = json['nutrition'] != null
-        ? new Nutrition.fromJson(json['nutrition'])
+        ?  Nutrition.fromJson(json['nutrition'])
         : null;
     summary = json['summary'];
     if (json['cuisines'] != null) {
@@ -74,7 +74,7 @@ class RecipeInfo {
       });
     }
     winePairing = json['winePairing'] != null
-        ? new WinePairing.fromJson(json['winePairing'])
+        ?  WinePairing.fromJson(json['winePairing'])
         : null;
     instructions = json['instructions'];
     if (json['analyzedInstructions'] != null) {
@@ -127,7 +127,7 @@ class ExtendedIngredients {
     unit = json['unit'];
     meta = json['meta'].cast<String>();
     measures = json['measures'] != null
-        ? new Measures.fromJson(json['measures'])
+        ?  Measures.fromJson(json['measures'])
         : null;
   }
 
