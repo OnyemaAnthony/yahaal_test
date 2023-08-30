@@ -290,9 +290,9 @@ class WeightPerServing {
 }
 
 class WinePairing {
-  List<Null>? pairedWines;
+  List<dynamic>? pairedWines;
   String? pairingText;
-  List<Null>? productMatches;
+  List<dynamic>? productMatches;
 
   WinePairing({this.pairedWines, this.pairingText, this.productMatches});
 

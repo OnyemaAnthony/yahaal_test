@@ -37,7 +37,9 @@ class Results extends Recipe{
   String? imageType;
 
   Results({this.id, this.title, this.image, this.imageType});
+Stream<String> sendMessage(String message)async*{
 
+}
   Results.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
