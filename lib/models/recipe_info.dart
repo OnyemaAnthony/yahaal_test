@@ -9,14 +9,14 @@ class RecipeInfo {
   String? imageType;
   Nutrition? nutrition;
   String? summary;
-  List<Null>? cuisines;
+  List<dynamic>? cuisines;
   List<String>? dishTypes;
-  List<Null>? diets;
-  List<Null>? occasions;
+  List<dynamic>? diets;
+  List<dynamic>? occasions;
   WinePairing? winePairing;
   String? instructions;
-  List<Null>? analyzedInstructions;
-  Null originalId;
+  List<dynamic>? analyzedInstructions;
+  dynamic originalId;
   String? spoonacularSourceUrl;
 
   RecipeInfo(
