@@ -267,33 +267,6 @@ Map<String,dynamic>recipeInfo = {
       }
     },
     {
-      "id": 1012047,
-      "aisle": "Spices and Seasonings",
-      "image": "salt.jpg",
-      "consistency": "SOLID",
-      "name": "sea salt",
-      "nameClean": "coarse sea salt",
-      "original": "1 teaspoon sea salt, or to taste",
-      "originalName": "sea salt, or to taste",
-      "amount": 1.0,
-      "unit": "teaspoon",
-      "meta": [
-        "to taste"
-      ],
-      "measures": {
-        "us": {
-          "amount": 1.0,
-          "unitShort": "tsp",
-          "unitLong": "teaspoon"
-        },
-        "metric": {
-          "amount": 1.0,
-          "unitShort": "tsp",
-          "unitLong": "teaspoon"
-        }
-      }
-    },
-    {
       "id": 11260,
       "aisle": "Produce",
       "image": "mushrooms.png",
