@@ -7,5 +7,4 @@ abstract class RecipeService {
   Future<RecipeInfo>findRecipeById(String id);
   Future<void>saveFavouriteRecipe(Results recipe);
   Future<Recipe>fetchFavouriteRecipe();
-
 }
