@@ -13,6 +13,8 @@ import '../widgets/popular_card.dart';
 import '../widgets/primary_text.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
