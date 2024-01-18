@@ -13,7 +13,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
+
 # the latest version available on pub.dev. To see which dependencies have newer
 dependencies:
   flutter:
