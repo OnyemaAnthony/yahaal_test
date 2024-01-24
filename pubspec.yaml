@@ -32,7 +32,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # encourage good coding practices. The lint set provided by the package is
+
 
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
