@@ -12,7 +12,6 @@ environment:
   sdk: '>=3.0.5 <4.0.0'
 
 
-# the latest version available on pub.dev. To see which dependencies have newer
 dependencies:
   flutter:
     sdk: flutter
