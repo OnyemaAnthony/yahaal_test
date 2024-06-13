@@ -5,7 +5,7 @@ publish_to: 'none'
 
 
 
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+
 version: 1.0.0+1
 
 environment:
